@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="DreamLog-1.0-SNAPSHOT.war">
+    <root id="archive" name="dreamlog-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="DreamLog:war exploded" />
     </root>
   </artifact>

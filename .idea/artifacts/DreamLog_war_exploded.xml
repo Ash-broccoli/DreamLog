@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="DreamLog:war exploded">
-    <output-path>$PROJECT_DIR$/target/DreamLog-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/target/dreamlog-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -14,10 +14,32 @@
           <element id="module-output" name="DreamLog" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.30.Final" />
+          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.33" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.33" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.33" />
+          <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.3" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-server:2.33" />
+          <element id="library" level="project" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.6" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.media:jersey-media-json-jackson:2.33" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.ext:jersey-entity-filtering:2.33" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.11.3" />
+          <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" />
+          <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.inject:jersey-hk2:2.33" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-locator:2.6.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:aopalliance-repackaged:2.6.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-api:2.6.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-utils:2.6.1" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.25.0-GA" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-client:2.33" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:jakarta.inject:2.6.1" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.29.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" />
           <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
-          <element id="library" level="project" name="Maven: org.javassist:javassist:3.27.0-GA" />
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.10.21" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" />
@@ -26,16 +48,66 @@
           <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
           <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.3" />
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" />
-          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:2.3.1" />
           <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" />
           <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8" />
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.2.0.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
+          <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-servlet-initializer:4.6.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-core:4.6.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:1.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-core-spi:4.6.0.Final" />
+          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.3" />
+          <element id="library" level="project" name="Maven: com.ibm.async:asyncutil:0.1.0" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final" />
+          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.1" />
+          <element id="library" level="project" name="Maven: io.smallrye.config:smallrye-config:2.0.1" />
+          <element id="library" level="project" name="Maven: io.smallrye.config:smallrye-config-core:2.0.1" />
+          <element id="library" level="project" name="Maven: org.eclipse.microprofile.config:microprofile-config-api:2.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.common:smallrye-common-annotation:1.5.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.common:smallrye-common-expression:1.5.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.common:smallrye-common-function:1.5.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.common:smallrye-common-constraint:1.5.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.common:smallrye-common-classloader:1.5.0" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:9.0" />
+          <element id="library" level="project" name="Maven: io.smallrye.config:smallrye-config-common:2.0.1" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:2.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-jackson2-provider:4.6.0.Final" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.11.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.11.4" />
+          <element id="library" level="project" name="Maven: com.github.java-json-tools:json-patch:1.13" />
+          <element id="library" level="project" name="Maven: com.github.java-json-tools:msg-simple:1.2" />
+          <element id="library" level="project" name="Maven: com.github.java-json-tools:btf:1.3" />
+          <element id="library" level="project" name="Maven: com.github.java-json-tools:jackson-coreutils:2.0" />
+          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.1" />
+          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.0" />
+          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.2.0" />
+          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.7.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-server:1.19" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.19" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-servlet:1.19" />
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:7.0.0.jre8" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.24" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:21.0.1" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.22" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-c3p0:5.4.17.Final" />
+          <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.3" />
+          <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.15" />
+          <element id="library" level="project" name="Maven: junit:junit:4.13.2" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: org.testng:testng:7.4.0" />
+          <element id="library" level="project" name="Maven: com.beust:jcommander:1.78" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:3.5.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/DreamLog-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/dreamlog-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="DreamLog/web/Web" />
     </root>
