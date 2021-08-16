@@ -15,7 +15,7 @@
 
             <!-- hibernate configuration -->
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 
             <!-- c3po configuration -->
             <property name="hibernate.c3po.min_size" value="10"/>
@@ -26,9 +26,7 @@
             <property name="hibernate.c3p0.timeout" value="1800"/>
             <property name="hibernate.c3p0.validate" value="1800"/>
 
-            <!--debug-->
-            <property name="hibernate.c3p0.unreturnedConnectionTimeout" value="30"/>
-            <property name="hibernate.c3po.debugUnreturnedConnectionStackTraces" value="true"/>
+
         </properties>
 
     </persistence-unit>
