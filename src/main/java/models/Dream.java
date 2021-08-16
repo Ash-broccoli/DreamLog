@@ -2,6 +2,7 @@ package models;
 
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -22,7 +23,6 @@ public class Dream {
     }
 
     public Dream() {
-
     }
 
     @Id
@@ -56,11 +56,11 @@ public class Dream {
 
     @OneToOne
     @JoinColumn(name="typeID")
-    public DreamType getTypeID() {
+    public DreamType getType() {
         return typeID;
     }
 
-    public void setTypeID(DreamType typeID) {
+    public void setType(DreamType typeID) {
         this.typeID = typeID;
     }
 
