@@ -14,6 +14,7 @@ public class Dream {
     private DreamType typeID;
     private Date date;
 
+
     public Dream(int dreamID, String title, String description, DreamType typeID, Date date) {
         this.dreamID = dreamID;
         this.title = title;
@@ -23,6 +24,11 @@ public class Dream {
     }
 
     public Dream() {
+    }
+
+    public String noTimeDate(Date currentDate){
+        SimpleDateFormat dateFormat= new SimpleDateFormat("dd/MMM/yyyy");
+        return dateFormat.format(currentDate);
     }
 
     @Id

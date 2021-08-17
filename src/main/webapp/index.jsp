@@ -11,6 +11,11 @@
 
 <div id="list">
     <h2>Dreams are being loaded <small><img width="45px" height="auto" id="loading" src="img/loading.gif"></small></h2>
+
+    <form action="dreamList.jsp">
+
+        <input type="submit" value="to list">
+    </form>
 </div>
 </body>
 </html>
