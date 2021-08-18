@@ -12,10 +12,10 @@
 </head>
 <body onload="loadData()">
 <div class="fullPageWidth">
-
+    <header class="header">
     </header>
     <div class="container">
-        <header class="header">
+
             <nav class="navbar navbar-expand-lg navbar-dark ">
                 <a class="navbar-brand" href="index.jsp">Dreams</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +28,13 @@
                     </div>
                 </div>
             </nav>
+        <hr class="navLine"/>
+
             <br>
         <h1 class="sign">Wel<span class="fast-flicker">com</span>e to my D<span class="flicker">re</span>am log</h1>
         <br>
         <div id="list">
-            <h2>Dreams are being loaded <small><img class="loader" width="200" height="auto" id="loading"
+            <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
                                                     src="img/loading.gif"></small>
             </h2>
         </div>

@@ -8,8 +8,10 @@
     background-color: rgba(6, 6, 23, 0.8);
 }
 
-h1 {
-    padding: 20px;
+/*Nav bar line */
+hr.navLine {
+    border: 1px solid white;
+    margin-top: 0px; !important;
 }
 
 .loader {
@@ -23,6 +25,10 @@ h1 {
     to {
         transform: rotate(359deg);
     }
+}
+
+h1 {
+    padding: 20px;
 }
 
 .sign {

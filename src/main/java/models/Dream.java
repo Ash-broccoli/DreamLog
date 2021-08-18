@@ -63,7 +63,7 @@ public class Dream {
     }
 
 
-    @Column(name="longDesc")
+    @Column(name="longDesc", length=2048)
     public String getLongDesc() {
         return longDesc;
     }
