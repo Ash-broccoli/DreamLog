@@ -16,22 +16,22 @@
     </header>
     <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-dark ">
-                <a class="navbar-brand" href="index.jsp">Home ✦</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="dreams.jsp">Dreams |</a>
-                        <a class="nav-item nav-link" href="addDream.jsp">Add Dream</a>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <a class="navbar-brand" href="index.jsp">Home ✦</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="dreams.jsp">Dreams<span class="sr-only">(current)</span> |</a>
+                    <a class="nav-item nav-link" href="addDream.jsp">Add Dream</a>
                 </div>
-            </nav>
+            </div>
+        </nav>
         <hr class="navLine"/>
 
-            <br>
-        <h1 class="sign">Wel<span class="fast-flicker">com</span>e to my D<span class="flicker">re</span>am log</h1>
+        <br>
+        <h1>✧Dreams</h1>
         <br>
         <div id="list">
             <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
