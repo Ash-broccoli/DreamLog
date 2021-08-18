@@ -1,4 +1,6 @@
-<%--
+<%@ page import="models.DreamType" %>
+<%@ page import="database.DAO.dreamTypeDAO" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: alyss
   Date: 18/08/2021
@@ -24,26 +26,51 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark ">
             <a class="navbar-brand" href="index.jsp">Home ✦</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link " href="dreams.jsp">Dreams |</a>
-                    <a class="nav-item nav-link active" href="addDream.jsp">Add Dream<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="addDream.jsp">Add Dream<span
+                            class="sr-only">(current)</span></a>
                 </div>
             </div>
         </nav>
         <hr class="navLine"/>
         <h1>✧Add Dream</h1>
-        <form class="form" action="addDreamServlet" method="get" accept-charset="utf-8">
-
-            <div class="row">
-                <input type="text" name="title" placeholder="title">
-
+        <form action="addDreamServlet" method="get" accept-charset="utf-8">
+            <div class="form-group col-md-6">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" name="title">
             </div>
-
-        <input type="submit">
+            <div class="form-group col-md-6">
+                <label for="shortDesc">Short Description</label>
+                <input type="text" class="form-control" id="shortDesc" placeholder="Short Description" name="shortDesc">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="type">Type</label>
+                <select class="form-control" id="type" name="type">
+                    <option value="" selected disabled hidden>Select a type</option>
+                    <%
+                        ArrayList<DreamType> typeList = new dreamTypeDAO().select();
+                        for (DreamType t : typeList) {
+                    %>
+                    <option value="<%out.print(t.getTypeID());%>"><%out.print(t.getType());%></option>
+                    <%
+                        }
+                    %>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="longDesc">Long Description</label>
+                <textarea class="form-control" id="longDesc" placeholder="Long Description" name="longDesc" rows="10"
+                          cols="25"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <button class="btn btn-dark" type="submit">Add dream</button>
+            </div>
         </form>
     </div>
 </div>
