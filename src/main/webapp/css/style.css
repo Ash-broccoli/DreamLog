@@ -1,13 +1,14 @@
-.fullPageWidth{
-    background-color: rgba(6, 6, 23, 0.8);
-}
-*{
+* {
     color: rgb(215, 215, 215);
     font-family: Yanone Kaffeesatz, sans-serif;
     font-size-adjust: 0.8;
 }
 
-h1{
+.fullPageWidth , html {
+    background-color: rgba(6, 6, 23, 0.8);
+}
+
+h1 {
     padding: 20px;
 }
 
