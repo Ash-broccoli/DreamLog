@@ -35,10 +35,10 @@
                 out.print(dream.noTimeDate(date));%>
         </td>
         <td>
-            <% out.print(dream.getDescription());%>
+            <% out.print(dream.getShortDesc());%>
         </td>
         <td>
-            <% out.print(dream.getType().getType());%>
+            <% out.print(dream.getTypeID().getType());%>
         </td>
     </tr>
     <%

@@ -13,11 +13,9 @@
 <body onload="loadData()">
 <div class="fullPageWidth">
     <div class="container">
-
             <h1 class="sign">Wel<span class="fast-flicker">com</span>e to my D<span class="flicker">re</span>am log</h1>
-
         <br>
-
+        
         <div id="list">
             <h2>Dreams are being loaded <small><img class="loader" width="200" height="auto" id="loading"
                                                     src="img/loading.gif"></small>

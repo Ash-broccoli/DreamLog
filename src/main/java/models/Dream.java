@@ -10,15 +10,17 @@ import java.util.Date;
 public class Dream {
     private int dreamID;
     private String title;
-    private String description;
+    private String shortDesc;
+    private String longDesc;
     private DreamType typeID;
     private Date date;
 
 
-    public Dream(int dreamID, String title, String description, DreamType typeID, Date date) {
+    public Dream(int dreamID, String title, String shortDesc, String longDesc ,DreamType typeID, Date date) {
         this.dreamID = dreamID;
         this.title = title;
-        this.description = description;
+        this.shortDesc = shortDesc;
+        this.longDesc = longDesc;
         this.typeID = typeID;
         this.date = date;
     }
@@ -51,22 +53,32 @@ public class Dream {
         this.title = title;
     }
 
-    @Column(name="description")
-    public String getDescription() {
-        return description;
+    @Column(name="shortDesc")
+    public String getShortDesc() {
+        return shortDesc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setShortDesc(String shortDesc) {
+        this.shortDesc = shortDesc;
+    }
+
+
+    @Column(name="longDesc")
+    public String getLongDesc() {
+        return longDesc;
+    }
+
+    public void setLongDesc(String longDesc) {
+        this.longDesc = longDesc;
     }
 
     @OneToOne
     @JoinColumn(name="typeID")
-    public DreamType getType() {
+    public DreamType getTypeID() {
         return typeID;
     }
 
-    public void setType(DreamType typeID) {
+    public void setTypeID(DreamType typeID) {
         this.typeID = typeID;
     }
 
@@ -79,14 +91,5 @@ public class Dream {
         this.date = date;
     }
 
-    @Override
-    public String toString() {
-        return "Dream{" +
-                "dreamID=" + dreamID +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", typeID=" + typeID +
-                ", date=" + date +
-                '}';
-    }
+
 }
