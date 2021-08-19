@@ -50,19 +50,13 @@ public class addDreamServlet extends HttpServlet {
 
             Dream d = new Dream();
             DreamType dt = new DreamType();
-            Date parsedDate = null;
             int typeId = Integer.parseInt(stypeId);
             dt.setTypeID(typeId);
-            try {
-                parsedDate = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-            } catch (ParseException e) {
-                System.err.println("Parse was unsuccessful!");
-                e.printStackTrace();
-            }
+
             d.setTitle(title);
             d.setShortDesc(shortDesc);
             d.setTypeID(dt);
-            d.setDate(parsedDate);
+            d.setDate(date);
             d.setLongDesc(longDesc);
 
             new dreamDAO().insert(d);

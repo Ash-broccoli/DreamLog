@@ -13,10 +13,10 @@ public class Dream {
     private String shortDesc;
     private String longDesc;
     private DreamType typeID;
-    private Date date;
+    private String date;
 
 
-    public Dream(int dreamID, String title, String shortDesc, String longDesc ,DreamType typeID, Date date) {
+    public Dream(int dreamID, String title, String shortDesc, String longDesc ,DreamType typeID, String date) {
         this.dreamID = dreamID;
         this.title = title;
         this.shortDesc = shortDesc;
@@ -83,11 +83,11 @@ public class Dream {
     }
 
     @Column(name="date")
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
