@@ -15,7 +15,11 @@
     <title>☾ Dream Log ☾</title>
 </head>
 <body>
+<div class="fullPageWidth">
+    <div class="container">
     <h1>Error some fields were empty!!</h1>
-<h2>Cl</h2>
+    <h2>Click <a style="text-decoration: underline; cursor: pointer" onclick="window.history.back()">here</a> to go back</h2>
+    </div>
+</div>
 </body>
 </html>

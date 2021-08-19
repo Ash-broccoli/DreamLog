@@ -23,16 +23,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="dreams.jsp">Dreams<span class="sr-only">(current)</span> |</a>
+                    <a class="nav-item nav-link " href="dreams.jsp">Dreams |</a>
                     <a class="nav-item nav-link" href="addDream.jsp">Add Dream |</a>
-                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream</a>
+                    <a class="nav-item nav-link active" href="deleteDream.jsp">Delete Dream<span class="sr-only">(current)</span></a>
                 </div>
             </div>
         </nav>
         <hr class="navLine"/>
 
         <br>
-        <h1>✧Dreams</h1>
+        <h1>✧Delete Dream</h1>
         <br>
         <div id="list">
             <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
