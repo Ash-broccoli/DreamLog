@@ -17,4 +17,12 @@ public class dreamDAO {
         em.close();
         return result;
     }
+
+    public void insert(Dream d) {
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+        em.persist(d);
+        em.getTransaction().commit();
+        em.close();
+    }
 }

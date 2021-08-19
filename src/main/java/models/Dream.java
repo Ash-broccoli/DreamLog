@@ -29,7 +29,7 @@ public class Dream {
     }
 
     public String noTimeDate(Date currentDate){
-        SimpleDateFormat dateFormat= new SimpleDateFormat("dd/MMM/yyyy");
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.format(currentDate);
     }
 
