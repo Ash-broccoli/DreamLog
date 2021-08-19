@@ -19,6 +19,17 @@ public class dreamDAO {
         return result;
     }
 
+    public ArrayList<Dream> selectWithId(int id){
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+
+        ArrayList<Dream> result = (ArrayList<Dream>) em.createQuery("select d from Dream d where d.dreamID = :id", Dream.class).setParameter("id", id).getResultList();
+
+        em.getTransaction().commit();
+        em.close();
+        return result;
+    }
+
     public ArrayList<Dream> selectMonth(String date){
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();

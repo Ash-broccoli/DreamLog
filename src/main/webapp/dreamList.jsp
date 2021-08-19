@@ -38,7 +38,7 @@
     <%
         for (Dream dream : dlist) {
     %>
-    <tr class="clickableRow" onclick="window.location='https://www.google.com/';" >
+    <tr class="clickableRow" onclick="window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';" >
         <td>
             <% out.print(dream.getTitle());%>
             <span class="RowComment">More Info</span>
