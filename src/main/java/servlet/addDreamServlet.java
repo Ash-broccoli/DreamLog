@@ -1,4 +1,4 @@
-package servlets;
+package servlet;
 
 import database.DAO.dreamDAO;
 import models.Dream;
@@ -67,7 +67,7 @@ public class addDreamServlet extends HttpServlet {
 
             new dreamDAO().insert(d);
 
-            response.sendRedirect("dreams.jsp");
+            response.sendRedirect("index.jsp");
         }
 
     }
