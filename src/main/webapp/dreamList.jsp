@@ -8,13 +8,22 @@
   Time: 17:47
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <%
-    LocalDate localdate = LocalDate.now();
-    String sDate = localdate.toString();
-    ArrayList<Dream> dlist = new dreamDAO().selectMonth(sDate);
+    ArrayList<Dream> dlist;
+    if (request.getParameter("source").equals("index")) {
+        LocalDate localdate = LocalDate.now();
+        String sDate = localdate.toString();
+        sDate = sDate.substring(0, 7);
+        dlist = new dreamDAO().selectMonth(sDate);
+    } else {
+        dlist = new dreamDAO().select();
 
-    %>
+    }
+
+
+%>
 <table class="table table-dark table-striped table-hover">
     <thead class="white-header">
     <tr>
@@ -29,9 +38,10 @@
     <%
         for (Dream dream : dlist) {
     %>
-    <tr>
+    <tr class="clickableRow" onclick="window.location='https://www.google.com/';" >
         <td>
             <% out.print(dream.getTitle());%>
+            <span class="RowComment">More Info</span>
         </td>
         <td>
             <%

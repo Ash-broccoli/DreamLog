@@ -9,8 +9,13 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <title>☾ Dream Log ☾</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadData("all");
+        });
+    </script>
 </head>
-<body onload="loadData()">
+<body>
 <div class="fullPageWidth">
     <header class="header">
     </header>
@@ -32,7 +37,7 @@
         <hr class="navLine"/>
 
         <br>
-        <h1>✧Dreams</h1>
+        <h1>✧Dream Archive</h1>
         <br>
         <div id="list">
             <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"

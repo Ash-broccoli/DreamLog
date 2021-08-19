@@ -14,9 +14,43 @@ hr.navLine {
     margin-top: 0px; !important;
 }
 
+/*Rocket loader*/
 .loader {
     animation: rotation 8s infinite linear;
 }
+
+/*Table rows and Tooltip*/
+.clickableRow span.RowComment{
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.clickableRow span.RowComment::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.clickableRow:hover span.RowComment{
+    display: block;
+    opacity: 1;
+}
+
+
 
 @keyframes rotation {
     from {

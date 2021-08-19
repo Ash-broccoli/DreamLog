@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>☾ Dream Log ☾</title>
 </head>
-<body onload="loadData()">
+<body>
 <div class="fullPageWidth">
     <header class="header">
     </header>

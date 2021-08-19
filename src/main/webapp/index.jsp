@@ -11,8 +11,13 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <title>☾ Dream Log ☾</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadData("index");
+        });
+    </script>
 </head>
-<body onload="loadData()">
+<body>
 <div class="fullPageWidth">
     <header class="header">
     </header>

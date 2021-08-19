@@ -23,7 +23,7 @@ public class dreamDAO {
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();
 
-        ArrayList<Dream> result = (ArrayList<Dream>) em.createQuery("select d from Dream d where d.date = :date", Dream.class).setParameter("date", date).getResultList();
+        ArrayList<Dream> result = (ArrayList<Dream>) em.createQuery("select d from Dream d where d.date like '"+date+"%'", Dream.class).getResultList();
 
         em.getTransaction().commit();
         em.close();
