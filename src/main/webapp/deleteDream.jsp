@@ -12,10 +12,25 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             loadData("all", "delete");
+
         });
+
+        function confirmDelete() {
+            var r = confirm("Are you sure you want to delete this dream?");
+            if (r === true) {
+                document.getElementById("deleteForm").submit();
+            } else {
+                window.location = "deleteDream.jsp";
+            }
+        }
     </script>
 </head>
-<body>
+<body <%
+    String deleteId = request.getParameter("dreamId");
+    if (request.getParameter("confirm") != null) {
+%> onload=confirmDelete();<%
+    }
+%>>
 <div class="fullPageWidth">
     <header class="header">
     </header>
@@ -23,7 +38,8 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark ">
             <a class="navbar-brand" href="index.jsp">Home ✦</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -39,12 +55,18 @@
         <br>
         <h1>✧Delete Dream</h1>
         <br>
+
         <div id="list">
-            <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
+            <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto"
+                                                    id="loading"
                                                     src="img/loading.gif"></small>
             </h2>
         </div>
+        <form id="deleteForm" method="GET" action="deleteDreamServlet">
+            <input type="hidden" name="dreamId" value="<%out.print(deleteId);%>">
+        </form>
     </div>
 </div>
 </body>
+
 </html>

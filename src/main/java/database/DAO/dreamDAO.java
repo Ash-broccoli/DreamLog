@@ -48,4 +48,12 @@ public class dreamDAO {
         em.getTransaction().commit();
         em.close();
     }
+
+    public void delete(Dream d){
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+        em.remove(em.contains(d) ? d : em.merge(d));
+        em.getTransaction().commit();
+        em.close();
+    }
 }
