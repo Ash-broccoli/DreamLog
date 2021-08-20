@@ -12,12 +12,16 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <%
     ArrayList<Dream> dlist;
+    boolean isDelete = false;
     if (request.getParameter("source").equals("index")) {
         LocalDate localdate = LocalDate.now();
         String sDate = localdate.toString();
         sDate = sDate.substring(0, 7);
         dlist = new dreamDAO().selectMonth(sDate);
     } else {
+        if(request.getParameter("btn") != null) {
+            isDelete = true;
+        }
         dlist = new dreamDAO().select();
 
     }
@@ -38,10 +42,10 @@
     <%
         for (Dream dream : dlist) {
     %>
-    <tr class="clickableRow" onclick="window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';" >
+    <tr class="clickableRow" onclick="<%if(!isDelete){%>window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';<%}else{%>window.location='deleteDream.jsp?confirm=true&dreamId=<%out.print(dream.getDreamID());%>';<%}%>" >
         <td>
             <% out.print(dream.getTitle());%>
-            <span class="RowComment">Click for more info</span>
+            <span class="RowComment"><%if(!isDelete){out.print("Click for more info");}else{out.print("Click to delete");}%></span>
         </td>
         <td>
             <%
