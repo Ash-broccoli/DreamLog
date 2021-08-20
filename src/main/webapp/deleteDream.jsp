@@ -9,6 +9,11 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     <title>☾ Dream Log ☾</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadData("all", "delete");
+        });
+    </script>
 </head>
 <body>
 <div class="fullPageWidth">

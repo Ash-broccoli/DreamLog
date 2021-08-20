@@ -11,7 +11,7 @@
     <title>☾ Dream Log ☾</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            loadData("all");
+            loadData("all", "none");
         });
     </script>
 </head>
@@ -39,10 +39,11 @@
         <br>
         <h1>✧Dream Archive</h1>
         <br>
+        <h2>All Dreams:</h2>
         <div id="list">
-            <h2>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
+            <h3>Dreams are being loaded <small><img alt="rocketloader" class="loader" width="200" height="auto" id="loading"
                                                     src="img/loading.gif"></small>
-            </h2>
+            </h3>
         </div>
     </div>
 </div>

@@ -41,7 +41,7 @@
     <tr class="clickableRow" onclick="window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';" >
         <td>
             <% out.print(dream.getTitle());%>
-            <span class="RowComment">More Info</span>
+            <span class="RowComment">Click for more info</span>
         </td>
         <td>
             <%

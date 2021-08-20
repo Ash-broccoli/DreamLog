@@ -68,20 +68,20 @@
                            disabled>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="shortDesc">Short Description</label>
-                    <input type="text" class="form-control" id="shortDesc" name="shortDesc"
-                           value="<%out.print(shortDesc);%>" disabled>
+                    <label for="type">Type</label>
+                    <input type="text" class="form-control" id="type" name="type" value="<%out.print(type);%>"
+                           disabled>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" name="date" value="<%out.print(date);%>"
-                           disabled>
+                    <label for="shortDesc">Short Description</label>
+                    <input type="text" class="form-control" id="shortDesc" name="shortDesc"
+                           value="<%out.print(shortDesc);%>" disabled>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="type">Type</label>
-                    <input type="text" class="form-control" id="type" name="type" value="<%out.print(type);%>"
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" value="<%out.print(date);%>"
                            disabled>
                 </div>
             </div>

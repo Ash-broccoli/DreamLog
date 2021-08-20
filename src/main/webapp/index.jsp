@@ -13,7 +13,7 @@
     <title>☾ Dream Log ☾</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            loadData("index");
+            loadData("index", "none");
         });
     </script>
 </head>
