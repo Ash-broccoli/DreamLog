@@ -33,6 +33,14 @@ public class Dream {
         return dateFormat.format(currentDate);
     }
 
+    public void setEverything(Dream d){
+        this.setTitle(d.title);
+        this.setShortDesc(d.shortDesc);
+        this.setLongDesc(d.longDesc);
+        this.setTypeID(d.typeID);
+        this.setDate(d.date);
+    }
+
     @Id
     @Column(name="dreamID")
     public int getDreamID() {

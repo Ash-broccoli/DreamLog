@@ -19,13 +19,15 @@
         sDate = sDate.substring(0, 7);
         dlist = new dreamDAO().selectMonth(sDate);
     } else {
-        if(request.getParameter("btn") != null) {
+        if (request.getParameter("btn") != null) {
             isDelete = true;
         }
         dlist = new dreamDAO().select();
 
     }
-
+    if (dlist.isEmpty()) {
+        out.print("<h3 class=\"text-danger\" >No dreams found!</h3>");
+    } else {
 
 %>
 <table class="table table-dark table-striped table-hover">
@@ -42,10 +44,17 @@
     <%
         for (Dream dream : dlist) {
     %>
-    <tr class="clickableRow" onclick="<%if(!isDelete){%>window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';<%}else{%>window.location='deleteDream.jsp?confirm=true&dreamId=<%out.print(dream.getDreamID());%>';<%}%>" >
+    <tr class="clickableRow"
+        onclick="<%if(!isDelete){%>window.location='dreamInfo.jsp?dreamId=<%out.print(dream.getDreamID());%>';<%}else{%>window.location='deleteDream.jsp?confirm=true&dreamId=<%out.print(dream.getDreamID());%>';<%}%>">
         <td>
             <% out.print(dream.getTitle());%>
-            <span class="RowComment"><%if(!isDelete){out.print("Click for more info");}else{out.print("Click to delete");}%></span>
+            <span class="RowComment"><%
+                if (!isDelete) {
+                    out.print("Click for more info");
+                } else {
+                    out.print("Click to delete");
+                }
+            %></span>
         </td>
         <td>
             <%
@@ -61,6 +70,10 @@
     <%
         }
     %>
+
     </tbody>
 </table>
 
+<%
+    }
+%>

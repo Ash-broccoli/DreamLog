@@ -45,7 +45,7 @@
         <hr class="navLine"/>
         <h1>✧In depth Dream</h1>
         <%
-            String sDreamId = request.getParameter("dreamId");
+            String sDreamId = request.getParameter("editId");
             String title = "";
             String shortDesc = "";
             String date = "";
@@ -61,45 +61,58 @@
                 longDesc = d.getLongDesc();
             }
         %>
-        <form>
+        <form action="editDreamServlet" method="get" accept-charset="UTF-8">
             <div class="row">
+                <input type="hidden" name="dreamId" value="<%out.print(dreamId);%>">
                 <div class="form-group col-md-6">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="<%out.print(title);%>"
-                           disabled>
+                           autofocus>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="type">Type</label>
-                    <input type="text" class="form-control" id="type" name="type" value="<%out.print(type);%>"
-                           disabled>
+                    <select class="form-control" id="type" name="type" required>
+                        <option value="" selected disabled hidden>Select a type</option>
+                        <%
+                            ArrayList<DreamType> typeList = new dreamTypeDAO().select();
+                            for (DreamType t : typeList) {
+                                if (t.getType().equals(type)) {%>
+                                    <option selected style="color:black" value="<%out.print(t.getTypeID());%>"><%out.print(t.getType());%></option>
+                        <% }else{
+                        %>
+                        <option style="color: black;" value="<%out.print(t.getTypeID());%>"><%
+                            out.print(t.getType());%></option>
+                        <%
+                                }}
+                        %>
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="shortDesc">Short Description</label>
                     <input type="text" class="form-control" id="shortDesc" name="shortDesc"
-                           value="<%out.print(shortDesc);%>" disabled>
+                           value="<%out.print(shortDesc);%>">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="date">Date</label>
                     <input type="date" class="form-control" id="date" name="date" value="<%out.print(date);%>"
-                           disabled>
+                    >
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="longDesc">Long Description</label>
                     <textarea class="form-control" id="longDesc" name="longDesc" rows="10"
-                              cols="25" disabled><%out.print(longDesc);%></textarea>
+                              cols="25"><%out.print(longDesc);%></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-9">
+                    <button class="btn btn-secondary" type="submit">Done</button>
                 </div>
             </div>
         </form>
-        <div class="row">
-            <div class="form-group col-md-9">
-                <button class="btn btn-secondary" onclick="window.history.back()">Go back</button>
-        <button class="btn btn-secondary" onclick="window.location='editDream.jsp?editId=<%out.print(sDreamId);%>'">Edit</button>
-            </div>
-        </div>
     </div>
 </div>
 </body>

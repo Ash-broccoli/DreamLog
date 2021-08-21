@@ -19,8 +19,8 @@ public class deleteDreamServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int dreamId = Integer.parseInt(request.getParameter("dreamId"));
-        ArrayList<Dream> dream = new dreamDAO().selectWithId(dreamId);
-        new dreamDAO().delete(dream.get(0));
+        Dream dream = new dreamDAO().selectWithId(dreamId);
+        new dreamDAO().delete(dream);
         System.out.println("Dream was deleted");
         response.sendRedirect("deleteDream.jsp");
     }
