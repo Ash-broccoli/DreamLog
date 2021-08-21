@@ -45,21 +45,17 @@
         <hr class="navLine"/>
         <h1>✧In depth Dream</h1>
         <%
+
             String sDreamId = request.getParameter("dreamId");
-            String title = "";
-            String shortDesc = "";
-            String date = "";
-            String type = "";
-            String longDesc = "";
             int dreamId = Integer.parseInt(sDreamId);
-            ArrayList<Dream> dList = new dreamDAO().selectWithId(dreamId);
-            for (Dream d : dList) {
-                title = d.getTitle();
-                shortDesc = d.getShortDesc();
-                date = d.getDate();
-                type = d.getTypeID().getType();
-                longDesc = d.getLongDesc();
-            }
+            Dream d = new dreamDAO().selectWithId(dreamId);
+
+            String title = d.getTitle();
+            String shortDesc = d.getShortDesc();
+            String date = d.getDate();
+            String type = d.getTypeID().getType();
+            String longDesc = d.getLongDesc();
+
         %>
         <form>
             <div class="row">
@@ -97,7 +93,9 @@
         <div class="row">
             <div class="form-group col-md-9">
                 <button class="btn btn-secondary" onclick="window.history.back()">Go back</button>
-        <button class="btn btn-secondary" onclick="window.location='editDream.jsp?editId=<%out.print(sDreamId);%>'">Edit</button>
+                <button class="btn btn-secondary"
+                        onclick="window.location='editDream.jsp?editId=<%out.print(sDreamId);%>'">Edit
+                </button>
             </div>
         </div>
     </div>

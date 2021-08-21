@@ -46,20 +46,13 @@
         <h1>✧In depth Dream</h1>
         <%
             String sDreamId = request.getParameter("editId");
-            String title = "";
-            String shortDesc = "";
-            String date = "";
-            String type = "";
-            String longDesc = "";
             int dreamId = Integer.parseInt(sDreamId);
-            ArrayList<Dream> dList = new dreamDAO().selectWithId(dreamId);
-            for (Dream d : dList) {
-                title = d.getTitle();
-                shortDesc = d.getShortDesc();
-                date = d.getDate();
-                type = d.getTypeID().getType();
-                longDesc = d.getLongDesc();
-            }
+            Dream d = new dreamDAO().selectWithId(dreamId);
+            String title = d.getTitle();
+            String shortDesc = d.getShortDesc();
+            String date = d.getDate();
+            String type = d.getTypeID().getType();
+            String longDesc = d.getLongDesc();
         %>
         <form action="editDreamServlet" method="get" accept-charset="UTF-8">
             <div class="row">
@@ -77,13 +70,15 @@
                             ArrayList<DreamType> typeList = new dreamTypeDAO().select();
                             for (DreamType t : typeList) {
                                 if (t.getType().equals(type)) {%>
-                                    <option selected style="color:black" value="<%out.print(t.getTypeID());%>"><%out.print(t.getType());%></option>
-                        <% }else{
+                        <option selected style="color:black" value="<%out.print(t.getTypeID());%>"><%
+                            out.print(t.getType());%></option>
+                        <% } else {
                         %>
                         <option style="color: black;" value="<%out.print(t.getTypeID());%>"><%
                             out.print(t.getType());%></option>
                         <%
-                                }}
+                                }
+                            }
                         %>
                     </select>
                 </div>
