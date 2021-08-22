@@ -64,7 +64,7 @@ import java.io.IOException;
 
                 new dreamDAO().update(d);
 
-                response.sendRedirect("dreams.jsp");
+                response.sendRedirect("index.jsp");
             }
 
         }
