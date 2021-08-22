@@ -1,19 +1,16 @@
 package servlet;
 
-import database.DAO.dreamDAO;
+import database.DAO.DreamDAO;
 import models.Dream;
 import models.DreamType;
 
 import java.io.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "addDreamServlet", value = "/addDreamServlet")
-public class addDreamServlet extends HttpServlet {
-    public addDreamServlet() {
+public class AddDreamServlet extends HttpServlet {
+    public AddDreamServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -59,7 +56,7 @@ public class addDreamServlet extends HttpServlet {
             d.setDate(date);
             d.setLongDesc(longDesc);
 
-            new dreamDAO().insert(d);
+            new DreamDAO().insert(d);
 
             response.sendRedirect("index.jsp");
         }

@@ -1,6 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="models.Dream" %>
-<%@ page import="database.DAO.dreamDAO" %>
+<%@ page import="database.DAO.DreamDAO" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.time.LocalDate" %><%--
   User: alyss
@@ -17,12 +17,12 @@
         LocalDate localdate = LocalDate.now();
         String sDate = localdate.toString();
         sDate = sDate.substring(0, 7);
-        dlist = new dreamDAO().selectMonth(sDate);
+        dlist = new DreamDAO().selectMonth(sDate);
     } else {
         if (request.getParameter("btn") != null) {
             isDelete = true;
         }
-        dlist = new dreamDAO().select();
+        dlist = new DreamDAO().select();
 
     }
     if (dlist.isEmpty()) {

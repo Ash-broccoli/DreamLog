@@ -1,8 +1,8 @@
 <%@ page import="models.DreamType" %>
-<%@ page import="database.DAO.dreamTypeDAO" %>
+<%@ page import="database.DAO.DreamTypeDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="models.Dream" %>
-<%@ page import="database.DAO.dreamDAO" %><%--
+<%@ page import="database.DAO.DreamDAO" %><%--
   Created by IntelliJ IDEA.
   User: alyss
   Date: 18/08/2021
@@ -47,7 +47,7 @@
         <%
             String sDreamId = request.getParameter("editId");
             int dreamId = Integer.parseInt(sDreamId);
-            Dream d = new dreamDAO().selectWithId(dreamId);
+            Dream d = new DreamDAO().selectWithId(dreamId);
             String title = d.getTitle();
             String shortDesc = d.getShortDesc();
             String date = d.getDate();
@@ -67,7 +67,7 @@
                     <select class="form-control" id="type" name="type" required>
                         <option value="" selected disabled hidden>Select a type</option>
                         <%
-                            ArrayList<DreamType> typeList = new dreamTypeDAO().select();
+                            ArrayList<DreamType> typeList = new DreamTypeDAO().select();
                             for (DreamType t : typeList) {
                                 if (t.getType().equals(type)) {%>
                         <option selected style="color:black" value="<%out.print(t.getTypeID());%>"><%

@@ -1,5 +1,5 @@
 <%@ page import="models.DreamType" %>
-<%@ page import="database.DAO.dreamTypeDAO" %>
+<%@ page import="database.DAO.DreamTypeDAO" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: alyss
@@ -56,7 +56,7 @@
                 <select class="form-control" id="type" name="type" required>
                     <option value="" selected disabled hidden>Select a type</option>
                     <%
-                        ArrayList<DreamType> typeList = new dreamTypeDAO().select();
+                        ArrayList<DreamType> typeList = new DreamTypeDAO().select();
                         for (DreamType t : typeList) {
                     %>
                     <option  style="color: black;" value="<%out.print(t.getTypeID());%>"><%out.print(t.getType());%></option>

@@ -1,6 +1,6 @@
 package servlet;
 
-import database.DAO.dreamDAO;
+import database.DAO.DreamDAO;
 import models.Dream;
 import models.DreamType;
 
@@ -12,8 +12,8 @@ import java.io.IOException;
 
 
     @WebServlet(name = "editDreamServlet", value = "/editDreamServlet")
-    public class editDreamServlet extends HttpServlet {
-        public editDreamServlet() {
+    public class EditDreamServlet extends HttpServlet {
+        public EditDreamServlet() {
             super();
             // TODO Auto-generated constructor stub
         }
@@ -62,9 +62,9 @@ import java.io.IOException;
                 d.setDate(date);
                 d.setLongDesc(longDesc);
 
-                new dreamDAO().update(d);
+                new DreamDAO().update(d);
 
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("dreamInfo.jsp?dreamId=" + d.getDreamID());
             }
 
         }

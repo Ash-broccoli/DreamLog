@@ -1,8 +1,8 @@
 <%@ page import="models.DreamType" %>
-<%@ page import="database.DAO.dreamTypeDAO" %>
+<%@ page import="database.DAO.DreamTypeDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="models.Dream" %>
-<%@ page import="database.DAO.dreamDAO" %><%--
+<%@ page import="database.DAO.DreamDAO" %><%--
   Created by IntelliJ IDEA.
   User: alyss
   Date: 18/08/2021
@@ -48,7 +48,7 @@
 
             String sDreamId = request.getParameter("dreamId");
             int dreamId = Integer.parseInt(sDreamId);
-            Dream d = new dreamDAO().selectWithId(dreamId);
+            Dream d = new DreamDAO().selectWithId(dreamId);
 
             String title = d.getTitle();
             String shortDesc = d.getShortDesc();

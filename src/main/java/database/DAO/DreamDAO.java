@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class dreamDAO {
+public class DreamDAO {
     public ArrayList<Dream> select() {
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();

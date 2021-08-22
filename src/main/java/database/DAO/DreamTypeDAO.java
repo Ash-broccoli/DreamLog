@@ -6,7 +6,7 @@ import models.DreamType;
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
 
-public class dreamTypeDAO {
+public class DreamTypeDAO {
 
     public ArrayList<DreamType> select(){
         EntityManager em = Connector.getInstance().open();
