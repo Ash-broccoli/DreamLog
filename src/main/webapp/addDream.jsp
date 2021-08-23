@@ -19,6 +19,12 @@
     <title>☾ Dream Log ☾</title>
 </head>
 <body>
+<%
+    if (session.getAttribute("userLoggedIn") == null || !((Boolean) session.getAttribute("userLoggedIn"))) {
+        response.sendRedirect("login.jsp");
+
+    }
+%>
 <div class="fullPageWidth">
     <header class="header">
     </header>

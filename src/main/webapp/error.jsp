@@ -15,6 +15,12 @@
     <title>☾ Dream Log ☾</title>
 </head>
 <body>
+<%
+    if (session.getAttribute("userLoggedIn") == null || !((Boolean) session.getAttribute("userLoggedIn"))) {
+        response.sendRedirect("login.jsp");
+
+    }
+%>
 <div class="fullPageWidth">
     <div class="container">
     <h1>Error some fields were empty!!</h1>
