@@ -21,7 +21,6 @@
 <%
     if (session.getAttribute("userLoggedIn") == null || !((Boolean) session.getAttribute("userLoggedIn"))) {
         response.sendRedirect("login.jsp");
-
     }
 %>
 <div class="fullPageWidth">
@@ -40,7 +39,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="dreams.jsp">Dreams |</a>
                     <a class="nav-item nav-link" href="addDream.jsp">Add Dream |</a>
-                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream</a>
+                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream |</a>
                     <a class="nav-item nav-link" id="logout" href="LogoutServlet">Log out</a>
 
                 </div>

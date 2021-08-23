@@ -44,7 +44,7 @@
                     <a class="nav-item nav-link active" href="dreams.jsp">Dreams <span
                             class="sr-only">(current)</span>|</a>
                     <a class="nav-item nav-link " href="addDream.jsp">Add Dream |</a>
-                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream</a>
+                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream |</a>
                     <a class="nav-item nav-link" id="logout" href="LogoutServlet">Log out</a>
 
                 </div>

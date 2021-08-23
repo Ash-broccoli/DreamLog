@@ -53,7 +53,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link " href="dreams.jsp">Dreams |</a>
                     <a class="nav-item nav-link" href="addDream.jsp">Add Dream |</a>
-                    <a class="nav-item nav-link active" href="deleteDream.jsp">Delete Dream<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="deleteDream.jsp">Delete Dream<span class="sr-only">(current)</span> |</a>
                     <a class="nav-item nav-link" id="logout" href="LogoutServlet">Log out</a>
 
                 </div>
