@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
              }
          }
 
-        if(encodedPassword.equals(new LoginDAO().selectLoginById(1).getPassword())){
+        if(encodedPassword.equals(new LoginDAO().selectLoginById(id).getPassword())){
             System.out.println("Logged in");
             resp.sendRedirect("index.jsp");
             isLoggedIn = true;
