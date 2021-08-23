@@ -15,6 +15,11 @@ h2, h3, table, nav, button{
     z-index: 3; !important;
 }
 
+#logout{
+    color: red;
+    font-weight: bold;
+}
+
 /*Nav bar line */
 hr.navLine {
     border: 1px solid white;
