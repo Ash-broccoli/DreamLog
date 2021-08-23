@@ -16,7 +16,7 @@ public class Dream {
     private String date;
 
 
-    public Dream(int dreamID, String title, String shortDesc, String longDesc ,DreamType typeID, String date) {
+    public Dream(int dreamID, String title, String shortDesc, String longDesc, DreamType typeID, String date) {
         this.dreamID = dreamID;
         this.title = title;
         this.shortDesc = shortDesc;
@@ -28,12 +28,12 @@ public class Dream {
     public Dream() {
     }
 
-    public String noTimeDate(Date currentDate){
-        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
+    public String noTimeDate(Date currentDate) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.format(currentDate);
     }
 
-    public void setEverything(Dream d){
+    public void setEverything(Dream d) {
         this.setTitle(d.title);
         this.setShortDesc(d.shortDesc);
         this.setLongDesc(d.longDesc);
@@ -42,7 +42,8 @@ public class Dream {
     }
 
     @Id
-    @Column(name="dreamID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dreamID")
     public int getDreamID() {
         return dreamID;
     }
@@ -51,7 +52,7 @@ public class Dream {
         this.dreamID = dreamID;
     }
 
-    @Column(name="title")
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -61,7 +62,7 @@ public class Dream {
         this.title = title;
     }
 
-    @Column(name="shortDesc")
+    @Column(name = "shortDesc")
     public String getShortDesc() {
         return shortDesc;
     }
@@ -71,7 +72,7 @@ public class Dream {
     }
 
 
-    @Column(name="longDesc", length=2048)
+    @Column(name = "longDesc", length = 2048)
     public String getLongDesc() {
         return longDesc;
     }
@@ -81,7 +82,7 @@ public class Dream {
     }
 
     @OneToOne
-    @JoinColumn(name="typeID")
+    @JoinColumn(name = "typeID")
     public DreamType getTypeID() {
         return typeID;
     }
@@ -90,7 +91,7 @@ public class Dream {
         this.typeID = typeID;
     }
 
-    @Column(name="date")
+    @Column(name = "date")
     public String getDate() {
         return date;
     }

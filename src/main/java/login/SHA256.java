@@ -12,6 +12,10 @@ import java.security.NoSuchAlgorithmException;
  * @since 2021
  */
 public class SHA256 {
+    public static String getInstantSHA(String password) {
+        return getHexString(getSHA(password));
+    }
+
     /**
      * Make a bytearray form a password
      *

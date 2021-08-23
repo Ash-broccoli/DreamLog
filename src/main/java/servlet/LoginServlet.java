@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         int id = 0;
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        String encodedPassword = SHA256.getHexString(SHA256.getSHA(password));
+        String encodedPassword = SHA256.getInstantSHA(password);
 
          ArrayList<Login> usernames = (ArrayList<Login>) new LoginDAO().select();
          for(Login u : usernames){

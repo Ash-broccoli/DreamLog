@@ -7,23 +7,15 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 public class LoginDAO {
+    public void insert(Login login, EntityManager em) {
+        em.persist(login);
+    }
 
     public List<Login> select() {
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();
 
         List<Login> result = em.createQuery("select d from Login d", Login.class).getResultList();
-
-        em.getTransaction().commit();
-        em.close();
-        return result;
-    }
-
-    public List<Login> selectUsernames() {
-        EntityManager em = Connector.getInstance().open();
-        em.getTransaction().begin();
-
-        List<Login> result = em.createQuery("select d.username from Login d", Login.class).getResultList();
 
         em.getTransaction().commit();
         em.close();

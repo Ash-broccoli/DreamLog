@@ -1,28 +1,27 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import login.SHA256;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "login")
 public class Login {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "loginId")
     private int loginId;
     private String username;
     private String password;
 
-    public Login(int loginId, String username, String password) {
-        this.loginId = loginId;
+    public Login(String username, String password) {
         this.username = username;
-        this.password = password;
+        this.password = SHA256.getInstantSHA(password);
     }
 
     public Login() {
     }
 
-    @Id
-    @Column(name="loginId")
     public int getLoginId() {
         return loginId;
     }
@@ -31,7 +30,7 @@ public class Login {
         this.loginId = loginId;
     }
 
-    @Column(name="username")
+    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -40,12 +39,20 @@ public class Login {
         this.username = username;
     }
 
-    @Column(name="password")
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        setPassword(password, true);
+    }
+
+    public void setPassword(String password, boolean encrypted) {
+        if (encrypted) {
+            this.password = SHA256.getInstantSHA(password);
+        } else {
+            this.password = password;
+        }
     }
 }
