@@ -31,7 +31,15 @@
                     <label>Password</label>
                     <div class="border"></div>
                 </div>
-
+                <%
+                    if (session.getAttribute("wrongLogIn") != null && (Integer) session.getAttribute("wrongLogIn") == 1) {
+                %>
+                <p style="color: red;">Username or password is incorrect!</p>
+                <br>
+                <%
+                        session.setAttribute("wrongLogIn", 0);
+                    }
+                %>
                 <input type="submit" class="btn" value="Log In">
             </form>
 

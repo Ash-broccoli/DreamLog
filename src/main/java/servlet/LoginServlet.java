@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -21,7 +22,9 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
         resp.setContentType("text/html");
+        boolean isLoggedIn = false;
         int id = 0;
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -37,7 +40,15 @@ public class LoginServlet extends HttpServlet {
         if(encodedPassword.equals(new LoginDAO().selectLoginById(1).getPassword())){
             System.out.println("Logged in");
             resp.sendRedirect("index.jsp");
+            isLoggedIn = true;
         }
+        session.setAttribute("userLoggedIn", isLoggedIn);
+
+        if(!isLoggedIn){
+            session.setAttribute("wrongLogIn", 1);
+            resp.sendRedirect("login.jsp");
+        }
+
         System.out.println("username = " + username);
         System.out.println("password = " + encodedPassword);
     }
