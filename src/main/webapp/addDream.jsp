@@ -51,39 +51,51 @@
         <hr class="navLine"/>
         <h1>✧Add Dream</h1>
         <form action="addDreamServlet" method="get" accept-charset="utf-8">
-            <div class="form-group col-md-6">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Title" name="title" autofocus required>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Title" name="title" autofocus
+                           required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type" name="type" required>
+                        <option value="" selected disabled hidden>Select a type</option>
+                        <%
+                            ArrayList<DreamType> typeList = new DreamTypeDAO().select();
+                            for (DreamType t : typeList) {
+                        %>
+                        <option style="color: black;" value="<%out.print(t.getTypeID());%>"><%
+                            out.print(t.getType());%></option>
+                        <%
+                            }
+                        %>
+                    </select>
+                </div>
+
             </div>
-            <div class="form-group col-md-6">
-                <label for="shortDesc">Short Description</label>
-                <input type="text" class="form-control" id="shortDesc" placeholder="Short Description" name="shortDesc" required>
+            <div class="row">
+
+                <div class="form-group col-md-6">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" placeholder="Date" name="date" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="shortDesc">Short Description</label>
+                    <input type="text" class="form-control" id="shortDesc" placeholder="Short Description"
+                           name="shortDesc" required>
+                </div>
             </div>
-            <div class="form-group col-md-6">
-                <label for="type">Type</label>
-                <select class="form-control" id="type" name="type" required>
-                    <option value="" selected disabled hidden>Select a type</option>
-                    <%
-                        ArrayList<DreamType> typeList = new DreamTypeDAO().select();
-                        for (DreamType t : typeList) {
-                    %>
-                    <option  style="color: black;" value="<%out.print(t.getTypeID());%>"><%out.print(t.getType());%></option>
-                    <%
-                        }
-                    %>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="date">Date</label>
-                <input type="date" class="form-control" id="date" placeholder="Date" name="date" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="longDesc">Long Description</label>
-                <textarea class="form-control" id="longDesc" placeholder="Long Description" name="longDesc" rows="10"
-                          cols="25" required></textarea>
-            </div>
-            <div class="form-group col-md-9">
-                <button class="btn btn-secondary" type="submit">Add dream</button>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="longDesc">Long Description</label>
+                    <textarea class="form-control" id="longDesc" placeholder="Long Description" name="longDesc"
+                              rows="10"
+                              cols="25" required></textarea>
+                </div>
+                <div class="form-group col-md-9">
+                    <button class="btn btn-secondary" type="submit">Add dream</button>
+                </div>
             </div>
         </form>
     </div>
