@@ -48,7 +48,7 @@
         <hr class="navLine"/>
 
         <br>
-        <h1 class="sign">Wel<span class="fast-flicker">com</span>e to my D<span class="flicker">re</span>am log</h1>
+        <h1 class="sign">Wel<span class="fast-flicker">com</span>e to your D<span class="flicker">re</span>am log <%%></h1>
         <br>
 
         <h2>This months dreams:</h2>
