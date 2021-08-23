@@ -4,9 +4,11 @@ import database.DAO.DreamDAO;
 import models.Dream;
 import models.DreamType;
 
-import java.io.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet(name = "addDreamServlet", value = "/addDreamServlet")
 public class AddDreamServlet extends HttpServlet {
@@ -41,9 +43,9 @@ public class AddDreamServlet extends HttpServlet {
             emptyField = true;
         }
 
-        if(emptyField){
+        if (emptyField) {
             response.sendRedirect("error.jsp");
-        }else {
+        } else {
 
             Dream d = new Dream();
             DreamType dt = new DreamType();
