@@ -32,11 +32,11 @@ public class LoginDAO {
         return result;
     }
 
-    public List<Login> selectPassword(int loginId){
+    public Login selectLoginById(int loginId){
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();
 
-        List<Login> result =  em.createQuery("select l.password from Login l where l.loginId = :loginId", Login.class).setParameter("loginId", loginId).getResultList();
+        Login result =  em.createQuery("select l from Login l where l.loginId = :loginId", Login.class).setParameter("loginId", loginId).getSingleResult();
 
         em.getTransaction().commit();
         em.close();
