@@ -1,6 +1,7 @@
 package database.DAO;
 
 import database.Connector;
+import models.Dream;
 import models.Login;
 
 import javax.persistence.EntityManager;
@@ -9,6 +10,14 @@ import java.util.List;
 public class LoginDAO {
     public void insert(Login login, EntityManager em) {
         em.persist(login);
+    }
+
+    public void insert(Login l) {
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+        em.persist(l);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public List<Login> select() {
