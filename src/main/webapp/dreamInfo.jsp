@@ -99,7 +99,7 @@
         </form>
         <div class="row">
             <div class="form-group col-md-9">
-                <button class="btn btn-secondary" onclick="window.history.go(-3)">Go back</button>
+                <button class="btn btn-secondary" onclick=window.location="index.jsp" >Go back</button>
                 <button class="btn btn-secondary"
                         onclick="window.location='editDream.jsp?editId=<%out.print(sDreamId);%>'">Edit
                 </button>
