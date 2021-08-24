@@ -1,5 +1,6 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.time.LocalDate" %>
+<%@ page import="database.DAO.LoginDAO" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,6 @@
     }
 
     System.out.println("Login Id " + session.getAttribute("loginId"));
-
 %>
 <div class="fullPageWidth">
     <header class="header">
