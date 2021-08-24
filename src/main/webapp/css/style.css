@@ -15,6 +15,12 @@ h2, h3, table, nav, button{
     z-index: 3; !important;
 }
 
+#lostAstro{
+    animation: rotation 12s infinite linear;
+    position: relative;
+    z-index: 3;
+}
+
 #logout{
     color: red;
     font-weight: bold;
