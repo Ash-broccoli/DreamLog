@@ -23,10 +23,9 @@
     int id = 0;
     if (session.getAttribute("loginId") == null) {
         response.sendRedirect("login.jsp");
-    }
-    if(session.getAttribute("loginId") != null) {
-         id = (Integer) session.getAttribute("loginId");
-    }
+    }else{
+        id = (Integer) session.getAttribute("loginId");
+
 
     System.out.println("Login Id " + session.getAttribute("loginId"));
 %>
@@ -67,5 +66,7 @@
         </div>
     </div>
 </div>
+
+<%}%>
 </body>
 </html>
