@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DreamDAO {
     public ArrayList<Dream> select() {
@@ -38,11 +39,22 @@ public class DreamDAO {
         }
     }
 
-    public ArrayList<Dream> selectMonth(String date) {
+    public ArrayList<Dream> selectByUserId(int loginID){
         EntityManager em = Connector.getInstance().open();
         em.getTransaction().begin();
 
-        ArrayList<Dream> result = (ArrayList<Dream>) em.createQuery("select d from Dream d where d.date like '" + date + "%'", Dream.class).getResultList();
+        ArrayList<Dream> result = (ArrayList<Dream>)em.createQuery("select d from Dream d where d.loginID.loginId = :loginID", Dream.class).setParameter("loginID", loginID).getResultList();
+
+        em.getTransaction().commit();
+        em.close();
+        return result;
+    }
+
+    public ArrayList<Dream> selectMonth(String date, int loginID) {
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+
+        ArrayList<Dream> result = (ArrayList<Dream>) em.createQuery("select d from Dream d where d.date like '" + date + "%' and d.loginID.loginId = :loginID", Dream.class).setParameter("loginID", loginID).getResultList();
 
         em.getTransaction().commit();
         em.close();

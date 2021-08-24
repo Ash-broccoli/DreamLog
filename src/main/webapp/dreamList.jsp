@@ -13,17 +13,17 @@
 <%
     ArrayList<Dream> dlist;
     boolean isDelete = false;
+    int id = (Integer) session.getAttribute("loginId");
     if (request.getParameter("source").equals("index")) {
         LocalDate localdate = LocalDate.now();
         String sDate = localdate.toString();
         sDate = sDate.substring(0, 7);
-        dlist = new DreamDAO().selectMonth(sDate);
+        dlist = new DreamDAO().selectMonth(sDate, id);
     } else {
         if (request.getParameter("btn") != null) {
             isDelete = true;
         }
-        dlist = new DreamDAO().select();
-
+        dlist = new DreamDAO().selectByUserId(id);
     }
     if (dlist.isEmpty()) {
         out.print("<h3 class=\"text-danger\" >No dreams found!</h3>");

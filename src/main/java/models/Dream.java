@@ -2,8 +2,6 @@ package models;
 
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Entity
 @Table(name = "dream")
@@ -14,23 +12,20 @@ public class Dream {
     private String longDesc;
     private DreamType typeID;
     private String date;
+    private Login loginID;
 
 
-    public Dream(int dreamID, String title, String shortDesc, String longDesc, DreamType typeID, String date) {
+    public Dream(int dreamID, String title, String shortDesc, String longDesc, DreamType typeID, String date, Login loginID) {
         this.dreamID = dreamID;
         this.title = title;
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
         this.typeID = typeID;
         this.date = date;
+        this.loginID = loginID;
     }
 
     public Dream() {
-    }
-
-    public String noTimeDate(Date currentDate) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        return dateFormat.format(currentDate);
     }
 
     public void setEverything(Dream d) {
@@ -100,5 +95,13 @@ public class Dream {
         this.date = date;
     }
 
+    @OneToOne
+    @JoinColumn(name = "loginID")
+    public Login getLoginID() {
+        return loginID;
+    }
 
+    public void setLoginID(Login loginID) {
+        this.loginID = loginID;
+    }
 }

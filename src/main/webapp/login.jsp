@@ -21,7 +21,7 @@
 
             <form action="LoginServlet" method="post" accept-charset="utf-8">
                 <div class="input-border">
-                    <input type="text" class="text" name="username" required>
+                    <input type="text" class="text" name="username" autofocus required>
                     <label>Username</label>
                     <div class="border"></div>
                 </div>

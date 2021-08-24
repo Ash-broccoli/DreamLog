@@ -22,6 +22,9 @@
     if (session.getAttribute("loginId") == null) {
         response.sendRedirect("login.jsp");
     }
+
+    System.out.println("Login Id " + session.getAttribute("loginId"));
+
 %>
 <div class="fullPageWidth">
     <header class="header">
