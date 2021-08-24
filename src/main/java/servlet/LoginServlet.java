@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name="LoginServlet", value="/LoginServlet")
+@WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,27 +24,30 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         resp.setContentType("text/html");
+        boolean wrongUsername = true;
         boolean isLoggedIn = false;
         int id = 0;
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String encodedPassword = SHA256.getInstantSHA(password);
 
-         ArrayList<Login> usernames = (ArrayList<Login>) new LoginDAO().select();
-         for(Login u : usernames){
-             if(username.equals(u.getUsername())){
-               id = u.getLoginId();
-             }
-         }
-
-        if(encodedPassword.equals(new LoginDAO().selectLoginById(id).getPassword())){
-            System.out.println("Logged in");
-            resp.sendRedirect("index.jsp");
-            isLoggedIn = true;
+        ArrayList<Login> usernames = (ArrayList<Login>) new LoginDAO().select();
+        for (Login u : usernames) {
+            if (username.equals(u.getUsername())) {
+                id = u.getLoginId();
+                wrongUsername = false;
+            }
         }
-        session.setAttribute("loginId", id);
+        if (!wrongUsername) {
+            if (encodedPassword.equals(new LoginDAO().selectLoginById(id).getPassword())) {
+                System.out.println("Logged in");
+                resp.sendRedirect("index.jsp");
+                isLoggedIn = true;
+                session.setAttribute("loginId", id);
+            }
+        }
 
-        if(!isLoggedIn){
+        if (!isLoggedIn) {
             session.setAttribute("wrongLogIn", 1);
             resp.sendRedirect("login.jsp");
         }

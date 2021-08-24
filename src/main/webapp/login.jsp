@@ -44,6 +44,8 @@
                 %>
                 <input type="submit" class="btn" value="Log In">
             </form>
+            <br>
+            <p style="color:white;">Don't have an account?<a style="color:white;text-decoration: underline;" href="register.jsp"> Register here!</a></p>
 
         </div>
     </div>
