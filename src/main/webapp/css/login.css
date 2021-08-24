@@ -108,6 +108,10 @@ label {
 
 .btn:hover {
     border: 2px solid white;
+    background-color: white;
+    color: black;
+    transition: .5s;
+    cursor: pointer;
 }
 
 @keyframes move-twink-back {

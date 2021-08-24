@@ -32,9 +32,8 @@
     }
 %>>
 <%
-    if (session.getAttribute("userLoggedIn") == null || !((Boolean) session.getAttribute("userLoggedIn"))) {
+    if (session.getAttribute("loginId") == null) {
         response.sendRedirect("login.jsp");
-
     }
 %>
 <div class="fullPageWidth">

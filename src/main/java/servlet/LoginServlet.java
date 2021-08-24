@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("index.jsp");
             isLoggedIn = true;
         }
-        session.setAttribute("userLoggedIn", isLoggedIn);
+        session.setAttribute("loginId", id);
 
         if(!isLoggedIn){
             session.setAttribute("wrongLogIn", 1);
