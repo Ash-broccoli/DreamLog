@@ -9,6 +9,7 @@ public class DBData {
         ArrayList<Login> loginList = new ArrayList<>();
 
         loginList.add(new Login("admin", "admin"));
+        loginList.add(new Login("Ash-broccoli", "dream123"));
 
         return loginList;
     }
