@@ -20,8 +20,12 @@
 </head>
 <body>
 <%
+    int id = 0;
     if (session.getAttribute("loginId") == null) {
         response.sendRedirect("login.jsp");
+    }
+    if(session.getAttribute("loginId") != null) {
+         id = (Integer) session.getAttribute("loginId");
     }
 
     System.out.println("Login Id " + session.getAttribute("loginId"));
@@ -51,7 +55,7 @@
         <hr class="navLine"/>
 
         <br>
-        <h1 class="sign">Wel<span class="fast-flicker">com</span>e to your D<span class="flicker">re</span>am log <%%></h1>
+        <h1 class="sign">Wel<span class="fast-flicker">com</span>e to your D<span class="flicker">re</span>am log, <%out.print(new LoginDAO().selectLoginById(id).getUsername());%></h1>
         <br>
 
         <h2>This months dreams:</h2>
