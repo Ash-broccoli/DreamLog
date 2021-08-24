@@ -17,7 +17,7 @@
         <div class="stars"></div>
         <div class="twinkling"></div>
         <div class="card">
-            <h2>Log-In Account</h2>
+            <h2>Log-In</h2>
 
             <form action="LoginServlet" method="post" accept-charset="utf-8">
                 <div class="input-border">
