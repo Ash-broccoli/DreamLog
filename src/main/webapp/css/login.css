@@ -6,19 +6,16 @@
 
 }
 
-body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .card {
     width: 380px;
     padding: 20px;
     border-radius: 6px;
-    box-shadow: 0 0 8px silver;
-    background: rgb(50%, 50%, 50%);
+    background: transparent;
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    left: 30%;
+    top: 50%;
 }
 
 h2 {
