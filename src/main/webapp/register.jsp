@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="input-border">
-                    <input type="password" class="text" name="setPassword" id="password" required>
+                    <input type="password" class="text" name="setPassword" id="setPassword" required>
                     <label>Set Password</label>
                     <div class="border"></div>
                 </div>
@@ -52,7 +52,7 @@
 </div>
 <script>
     function comparePass() {
-        let password = document.getElementById("password").value;
+        let password = document.getElementById("setPassword").value;
         let password2 = document.getElementById("password2").value;
 
         if(password !== password2) {
