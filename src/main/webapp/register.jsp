@@ -44,6 +44,8 @@
                 </div>
                 <input type="submit" class="btn" value="Register">
             </form>
+            <br>
+            <p style="color:white;"><a style="color:white;text-decoration: underline;" href="login.jsp"> Back to login!</a></p>
         </div>
     </div>
 </div>

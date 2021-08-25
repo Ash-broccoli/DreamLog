@@ -5,6 +5,7 @@ import models.Dream;
 import models.Login;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import java.util.List;
 
 public class LoginDAO {
@@ -29,6 +30,25 @@ public class LoginDAO {
         em.getTransaction().commit();
         em.close();
         return result;
+    }
+
+    public Login selectByUsername(String username) {
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+
+        Login result = selectByUsername(username, em);
+
+        em.getTransaction().commit();
+        em.close();
+        return result;
+    }
+
+    public Login selectByUsername(String username, EntityManager em) {
+        try {
+            return em.createQuery("select l from Login l where lower(l.username) = lower(:username)", Login.class).setParameter("username", username).getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
     public Login selectLoginById(int loginId) {
