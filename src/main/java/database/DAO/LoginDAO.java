@@ -62,4 +62,24 @@ public class LoginDAO {
         return result;
     }
 
+    public Login selectLoginById(int id, EntityManager em) {
+        try {
+            return em.createQuery("select l from Login l where l.loginId = :id", Login.class).setParameter("id", id).getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    public void update(Login l) {
+        EntityManager em = Connector.getInstance().open();
+        em.getTransaction().begin();
+        Login loginDB = selectLoginById(l.getLoginId(), em);
+        if (loginDB != null) {
+            loginDB.setPassword(l.getPassword(), false);
+        }
+        em.getTransaction().commit();
+        em.close();
+
+    }
+
 }

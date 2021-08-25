@@ -1,4 +1,5 @@
-<%--
+<%@ page import="database.DAO.LoginDAO" %>
+<%@ page import="models.Login" %><%--
   Created by IntelliJ IDEA.
   User: alyss
   Date: 25/08/2021
@@ -14,17 +15,25 @@
     <title>☾ Dream Log ☾</title>
 </head>
 <body>
+<%
+    if (session.getAttribute("loginId") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <div class="fullPageWidth">
     <div class="container">
         <div class="stars"></div>
         <div class="twinkling"></div>
         <div class="card">
             <h2>Change password</h2>
-            <% if(session.getAttribute("wrongPwd") != null){
+            <% if (session.getAttribute("wrongPwd") != null) {
                 out.print("<p class=\"text-danger\">Old password is incorrect!</p>");
-
-            }%>
-            <form action="AddUserServlet" method="post" accept-charset="utf-8">
+                }
+            int id = (Integer) session.getAttribute("loginId");
+            Login l = new LoginDAO().selectLoginById(id);
+            %>
+            <form action="ChangePwdServlet" method="post" accept-charset="utf-8">
+                <input type="hidden" name="username" value="<%out.print(l.getUsername());%>">
                 <div class="input-border">
                     <input type="password" class="text" name="oldPassword" autofocus required>
                     <label>Old password</label>
@@ -38,7 +47,8 @@
                 </div>
 
                 <div class="input-border">
-                    <input type="password" oninput="comparePass()" class="text" name="confPassword" id="password2" required>
+                    <input type="password" oninput="comparePass()" class="text" name="confPassword" id="password2"
+                           required>
                     <label>Confirm Password</label>
                     <p class="text-danger" id="warning"></p>
                     <div class="border"></div>
@@ -53,16 +63,17 @@
         let password = document.getElementById("setPassword").value;
         let password2 = document.getElementById("password2").value;
 
-        if(password !== password2) {
-            document.getElementById("warning").innerHTML="Passwords aren't identical!";
+        if (password !== password2) {
+            document.getElementById("warning").innerHTML = "Passwords aren't identical!";
             document.getElementById("submit").disabled = true;
-        }else{
-            document.getElementById("warning").innerHTML="";
+        } else {
+            document.getElementById("warning").innerHTML = "";
             document.getElementById("submit").disabled = false;
         }
     }
 
 </script>
+<%}%>
 </body>
 </html>
 
