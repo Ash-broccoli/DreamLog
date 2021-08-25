@@ -1,9 +1,6 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "dreamType")
@@ -11,8 +8,7 @@ public class DreamType {
     private int typeID;
     private String type;
 
-    public DreamType(int typeID, String type) {
-        this.typeID = typeID;
+    public DreamType( String type) {
         this.type = type;
     }
     public DreamType(){
@@ -20,6 +16,7 @@ public class DreamType {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="typeID")
     public int getTypeID() {
         return typeID;

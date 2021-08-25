@@ -7,11 +7,11 @@
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dreamlog"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-247-158-179.eu-west-1.compute.amazonaws.com:5432/d3jsgepi1g930i"/>
+            <property name="javax.persistence.jdbc.user" value="qqpznmigyunpxn"/>
+            <property name="javax.persistence.jdbc.password" value="437a0f76630cf028229a07a49235ca79f3b1bf0d0d4a42a86875a8fe8b67cd47"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
             <!-- hibernate configuration -->
             <property name="hibernate.show_sql" value="false"/>
