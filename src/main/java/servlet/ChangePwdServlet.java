@@ -39,8 +39,6 @@ public class ChangePwdServlet extends HttpServlet {
         }
 
         if(!wrongPwd){
-            System.out.println("newPassword = " + newPassword);
-            System.out.println("encodedNewPassword = " + encodedNewPassword);
            sameUsername.setPassword(newPassword);
             System.out.println(sameUsername.getPassword());
            loginDAO.update(sameUsername);
