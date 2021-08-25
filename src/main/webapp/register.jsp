@@ -32,22 +32,38 @@
                 </div>
 
                 <div class="input-border">
-                    <input type="password" class="text" name="setPassword" required>
+                    <input type="password" class="text" name="setPassword" id="password" required>
                     <label>Set Password</label>
                     <div class="border"></div>
                 </div>
 
                 <div class="input-border">
-                    <input type="password" class="text" name="confPassword" required>
+                    <input type="password" oninput="comparePass()" class="text" name="confPassword" id="password2" required>
                     <label>Confirm Password</label>
+                    <p class="text-danger" id="warning"></p>
                     <div class="border"></div>
                 </div>
-                <input type="submit" class="btn" value="Register">
+                <input type="submit" id="submit" class="btn" value="Register">
             </form>
             <br>
             <p style="color:white;"><a style="color:white;text-decoration: underline;" href="login.jsp"> Back to login!</a></p>
         </div>
     </div>
 </div>
+<script>
+    function comparePass() {
+        let password = document.getElementById("password").value;
+        let password2 = document.getElementById("password2").value;
+
+        if(password !== password2) {
+            document.getElementById("warning").innerHTML="Passwords aren't identical!";
+            document.getElementById("submit").disabled = true;
+        }else{
+            document.getElementById("warning").innerHTML="";
+            document.getElementById("submit").disabled = false;
+        }
+    }
+
+</script>
 </body>
 </html>
