@@ -1,6 +1,7 @@
 package demo;
 
 import database.Connector;
+import models.DreamType;
 import models.Login;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,10 @@ public class CreateDB {
         DBData data = new DBData();
         for (Login login : data.getLogins()) {
             em.persist(login);
+        }
+
+        for(DreamType dt : data.getTypes()){
+            em.persist(dt);
         }
 
         em.getTransaction().commit();
