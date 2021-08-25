@@ -39,10 +39,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link " href="dreams.jsp">Dreams |</a>
-                    <a class="nav-item nav-link active" href="addDream.jsp">Add Dream |<span
+                    <a class="nav-item nav-link active" href="addDream.jsp"> Add Dream |<span
                             class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link " href="deleteDream.jsp">Delete Dream |</a>
-                    <a class="nav-item nav-link" id="logout" href="LogoutServlet">Log out</a>
+                    <a class="nav-item nav-link " href="deleteDream.jsp"> Delete Dream |</a>
+                    <a class="nav-item nav-link " href="changePwd.jsp"> Change Password |</a>
+                    <a class="nav-item nav-link" id="logout" href="LogoutServlet"> Log out</a>
 
                 </div>
             </div>
