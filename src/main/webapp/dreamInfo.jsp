@@ -24,7 +24,7 @@
 <%
     if (session.getAttribute("loginId") == null) {
         response.sendRedirect("login.jsp");
-    }
+    }else{
 %>
 <div class="fullPageWidth">
     <header class="header">
@@ -62,6 +62,11 @@
             String date = d.getDate();
             String type = d.getTypeID().getType();
             String longDesc = d.getLongDesc();
+            int userId = d.getLoginID().getLoginId();
+            int loggedInId = (Integer) session.getAttribute("loginId");
+            if( userId != loggedInId){
+                response.sendRedirect("index.jsp");
+            }
 
         %>
         <form>
@@ -107,5 +112,6 @@
         </div>
     </div>
 </div>
+<%}%>
 </body>
 </html>
