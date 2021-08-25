@@ -54,14 +54,14 @@
             String sDreamId = request.getParameter("editId");
             int dreamId = Integer.parseInt(sDreamId);
             Dream d = new DreamDAO().selectWithId(dreamId);
-            int userId = d.getLoginID().getLoginId();
-            int loggedInId = (Integer) session.getAttribute("loginId");
             String title = d.getTitle();
             String shortDesc = d.getShortDesc();
             String date = d.getDate();
             String type = d.getTypeID().getType();
             String longDesc = d.getLongDesc();
 
+            int userId = d.getLoginID().getLoginId();
+            int loggedInId = (Integer) session.getAttribute("loginId");
             if( userId != loggedInId){
                 response.sendRedirect("index.jsp");
             }
