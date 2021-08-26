@@ -36,7 +36,7 @@
                 <%
                     if (session.getAttribute("wrongLogIn") != null && (Integer) session.getAttribute("wrongLogIn") == 1) {
                 %>
-                <p style="color: red;">Username or password is incorrect!</p>
+                <p style="color: red;">Username or password is incorrect! Register if needed.</p>
                 <br>
                 <%
                         session.setAttribute("wrongLogIn", 0);
