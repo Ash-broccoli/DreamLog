@@ -5,7 +5,7 @@
 I tend to dream a lot when I'm stressed. So i decided to make a website where I can note them down and save them somewhere
 <br>
 Thats basically what this website is<br>
-This website has a lot of css animations and is linked with a database (so yes. I can see anything you guys put in there :) )
+This website has a lot of css animations and is linked with a database (so yes. I can see anything you guys put in there)
 
 
 **Functions**
