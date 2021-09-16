@@ -22,6 +22,7 @@ This website has a lot of css animations and is linked with a database (so yes. 
 
 **Website:** https://ash-dreamlog.herokuapp.com/
 
+----
 
 **Reviews:**
 <br>
@@ -29,6 +30,7 @@ This website has a lot of css animations and is linked with a database (so yes. 
 "Wow a place where I can save my dreams and remember them! Amazing!"
 <br>
 -Definitely not me
+<br>
 <br>
 ★☆☆☆☆ <br>
 "Ew the animation is too much. not good"
